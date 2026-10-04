@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--
+================================================================
+  一般社団法人にほん支援推進機構 ブランドサイト デザイン案
+  ファイル：index.html（CSS / JavaScript すべてインライン）
+  デプロイ：Cloudflare Pages「Direct Upload」にこのファイル1枚をアップロード
+  外部依存：Google Fonts／Unsplash画像（読み込み失敗時はCSS背景に自動切替）
+
+  ■ コンセプト
+  「二本の手」── 社名の「支援」と「推進」を、
+  ・支える手（縦の線／柱）
+  ・押し出す手（横の線／前進）
+  の二本として図像化。ロゴマーク、ヒーローのアニメーション、
+  右端のスクロール進捗レール、考え方セクションの図まで、この「縦と横の二本線」で統一しています。
+  ※所在地など土地に由来する要素はコンセプトに使用していません。
+
+  ■ 要確認事項（公開前にご確認ください）
+  [要確認-01] 代表者の役職名（一般社団法人の場合「代表理事」が一般的なため仮置き）
+  [要確認-02] 設立年月日・法人番号・理事構成・会員制度の有無（法人概要に未掲載）
+  [要確認-03] 提供サービスの範囲・名称（4領域はコンサル業から想定した仮案）
+  [要確認-04] 補助金・助成金支援の範囲
+              ・官公署へ提出する書類を報酬を得て作成・代理する場合は行政書士法の対象
+              ・雇用関係助成金の申請書類作成・提出代行は社会保険労務士法の対象
+              → 有資格者との連携体制、または「情報提供・計画づくりの支援」に留める表記かをご確認ください
+  [要確認-05] 税務に関する個別相談を行う場合は税理士法の対象となるためご確認ください
+  [要確認-06] 実績・支援件数などの数値表現は景品表示法（優良誤認）に留意し、根拠資料がある場合のみ掲載
+  [要確認-07] 代表メッセージは下書きです。必ずご本人の確認・修正を経て公開してください
+  [要確認-08] 画像はUnsplashのフリー素材（仮）。本番では実際の活動写真への差し替えを推奨
+  [要確認-09] 郵便番号・住所表記（建物名・部屋番号の有無）
+  [要確認-10] 公開URL確定後、og:url / canonical を追記
+================================================================
+-->
+<title>一般社団法人にほん支援推進機構｜支える一本、押し出す一本。</title>
+<meta name="description" content="一般社団法人にほん支援推進機構は、中小企業・個人事業主の経営を支え、事業を前へ押し出すコンサルティングを行っています。">
+<meta property="og:title" content="一般社団法人にほん支援推進機構">
+<meta property="og:description" content="支える一本、押し出す一本。経営の伴走から計画づくり、販路、人と組織まで。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0F1A24">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F1A24'/%3E%3Crect x='10' y='5' width='3' height='22' fill='%23C8AE7D'/%3E%3Crect x='10' y='15' width='16' height='3' fill='%236FB3BD'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Shippori+Mincho+B1:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F1A24;        /* 藍墨：基調 */
+  --ink-2:#15222E;      /* 一段明るい面 */
+  --rule:#2A3a47;       /* 罫線 */
+  --paper:#E8E5DD;      /* 文字（暗背景上） */
+  --mute:#8E9BA5;       /* 補助文字 */
+  --hinoki:#C8AE7D;     /* 檜：支える一本（縦） */
+  --asagi:#6FB3BD;      /* 浅葱：押し出す一本（横） */
+  --light:#E3E6E2;      /* 明るい面 */
+  --light-ink:#16222C;
+  --serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --latin:"Cormorant Garamond","Times New Roman",serif;
+  --wrap:1180px;
+  --pad:clamp(20px,5vw,56px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:16px;line-height:1.95;letter-spacing:.04em;
+  word-break:auto-phrase;text-wrap:pretty;-webkit-font-smoothing:antialiased;
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.nw{display:inline-block}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--asagi);outline-offset:4px;border-radius:2px}
+.skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--paper);color:var(--ink);padding:10px 16px;text-decoration:none;font-weight:700;transition:top .2s}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+
+/* ---------- header ---------- */
+.hd{position:fixed;inset:0 0 auto 0;z-index:100;padding-top:env(safe-area-inset-top,0px);transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.hd.is-scrolled{background:rgba(15,26,36,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom-color:var(--rule)}
+.hd__in{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{flex:none}
+.brand__name{font-family:var(--serif);font-size:15px;font-weight:600;line-height:1.35;letter-spacing:.08em}
+.brand__name small{display:block;font-family:var(--sans);font-size:10.5px;font-weight:400;color:var(--mute);letter-spacing:.12em}
+.gnav ul{display:flex;gap:34px;list-style:none;margin:0;padding:0}
+.gnav a{text-decoration:none;font-size:13.5px;letter-spacing:.14em;position:relative;padding:6px 0}
+.gnav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--asagi);transition:width .35s}
+.gnav a:hover::after,.gnav a:focus-visible::after{width:100%}
+.menu-btn{display:none;background:none;border:0;color:var(--paper);width:44px;height:44px;cursor:pointer;position:relative}
+.menu-btn span{position:absolute;left:10px;right:10px;height:1px;background:currentColor;transition:transform .3s,opacity .3s}
+.menu-btn span:nth-child(1){top:16px}.menu-btn span:nth-child(2){top:22px}.menu-btn span:nth-child(3){top:28px}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- progress rail：縦の柱に、横の一本が進む ---------- */
+.rail{position:fixed;right:22px;top:50%;transform:translateY(-50%);height:52vh;width:44px;z-index:90;pointer-events:none}
+.rail__pillar{position:absolute;right:0;top:0;bottom:0;width:1px;background:linear-gradient(var(--hinoki),rgba(200,174,125,.25))}
+.rail__push{position:absolute;right:0;top:0;height:1px;width:10px;background:var(--asagi);transform-origin:right center;transition:width .15s linear}
+.rail__push::before{content:"";position:absolute;left:-3px;top:-3px;width:7px;height:7px;border-radius:50%;background:var(--asagi)}
+.rail__tick{position:absolute;right:0;width:6px;height:1px;background:var(--hinoki);opacity:.6}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;display:flex;align-items:flex-end}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero__grad{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 70%,transparent 0%,rgba(15,26,36,.55) 70%);pointer-events:none}
+.hero__in{position:relative;width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad) clamp(56px,10vh,110px);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.hero__title{font-family:var(--serif);font-weight:600;writing-mode:vertical-rl;font-size:clamp(34px,4.2vw,56px);line-height:1.7;letter-spacing:.18em;margin:0;justify-self:end;align-self:center;padding-top:120px}
+.hero__title span{display:block}
+.hero__title span:last-child{margin-top:2.2em}
+.hero__lede{max-width:30em;margin:0}
+.hero__lede .en{font-family:var(--latin);font-style:italic;font-size:clamp(20px,2vw,26px);color:var(--asagi);letter-spacing:.02em;line-height:1.4;margin:0 0 18px}
+.hero__lede p{margin:0;color:#C9CFD3;font-size:15px}
+.hero__load span{opacity:0;transform:translateY(12px);transition:opacity 1.2s ease,transform 1.2s ease}
+.hero__title.hero__load span{transform:translateY(-14px)}
+.is-loaded .hero__load span,.is-loaded .hero__load > *{opacity:1;transform:none}
+.hero__lede.hero__load > *{opacity:0;transition:opacity 1.4s ease 1s}
+.is-loaded .hero__title span:last-child{transition-delay:.5s}
+
+/* ---------- common ---------- */
+.sec{padding:clamp(96px,14vw,180px) 0;position:relative}
+.sec-h{font-family:var(--serif);font-weight:600;font-size:clamp(24px,2.8vw,34px);line-height:1.6;letter-spacing:.12em;margin:0 0 12px}
+.sec-sub{font-family:var(--latin);font-style:italic;color:var(--hinoki);font-size:18px;margin:0 0 48px;letter-spacing:.02em}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 1s ease,transform 1s ease}
+.reveal.is-in{opacity:1;transform:none}
+
+/* ---------- concept ---------- */
+.concept__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,7vw,110px);align-items:center}
+.concept__fig{position:relative;aspect-ratio:1/1;max-width:460px;width:100%}
+.concept__fig svg{width:100%;height:100%;overflow:visible}
+.concept__fig .ln{fill:none;stroke-linecap:round}
+.concept__fig .ln-v{stroke:var(--hinoki);stroke-width:2;stroke-dasharray:380;stroke-dashoffset:380;transition:stroke-dashoffset 1.6s cubic-bezier(.6,0,.2,1)}
+.concept__fig .ln-h{stroke:var(--asagi);stroke-width:2;stroke-dasharray:270;stroke-dashoffset:270;transition:stroke-dashoffset 1.6s cubic-bezier(.6,0,.2,1) 1.1s}
+.concept__fig .lbl{font-family:var(--serif);font-size:15px;fill:var(--paper);letter-spacing:.2em;opacity:0;transition:opacity 1s ease 2.2s}
+.concept__fig .dot{fill:var(--asagi);opacity:0;transition:opacity .6s ease 2.5s}
+.concept__fig.is-in .ln-v,.concept__fig.is-in .ln-h{stroke-dashoffset:0}
+.concept__fig.is-in .lbl,.concept__fig.is-in .dot{opacity:1}
+.concept__body p{margin:0 0 1.6em;max-width:32em}
+.concept__lead{font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);line-height:1.9;letter-spacing:.1em;margin:0 0 36px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:44px}
+.pair div{background:var(--ink);padding:26px 24px}
+.pair h3{font-family:var(--serif);font-size:18px;font-weight:600;margin:0 0 6px;letter-spacing:.14em;display:flex;align-items:center;gap:12px}
+.pair h3::before{content:"";flex:none;background:var(--hinoki);width:1px;height:20px}
+.pair div:last-child h3::before{background:var(--asagi);width:20px;height:1px}
+.pair p{margin:0;font-size:14px;color:#BCC4C9;line-height:1.85}
+.for-whom{margin-top:44px;font-size:14px;color:var(--mute)}
+.for-whom strong{color:var(--paper);font-weight:500}
+
+/* ---------- services（明るい面） ---------- */
+.services{background:var(--light);color:var(--light-ink)}
+.services .sec-sub{color:#8A7550}
+.services__intro{max-width:34em;margin:0 0 clamp(56px,8vw,96px)}
+.svc{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(36px,5vw,56px) 0;border-top:1px solid #C7CCC8}
+.svc:last-child{border-bottom:1px solid #C7CCC8}
+.svc:nth-child(even){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.svc:nth-child(even) .ph{order:2}
+.ph{position:relative;aspect-ratio:16/10;overflow:hidden;background:#C9D0CC}
+.ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.02);transition:transform 1.4s ease}
+.svc:hover .ph img{transform:scale(1.03)}
+.ph::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--hinoki)}
+.ph.is-fallback{background:
+  linear-gradient(90deg,transparent 0 58%,rgba(200,174,125,.9) 58% calc(58% + 2px),transparent 0),
+  linear-gradient(0deg,transparent 0 48%,rgba(111,179,189,.9) 48% calc(48% + 2px),transparent 0),
+  linear-gradient(135deg,#1c2b38,#2c4150)}
+.svc h3{font-family:var(--serif);font-size:clamp(20px,2vw,25px);font-weight:600;letter-spacing:.12em;line-height:1.6;margin:0 0 16px}
+.svc p{margin:0 0 18px;font-size:15px;max-width:30em}
+.svc ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:#4A5862}
+.svc li{position:relative;padding-left:14px}
+.svc li::before{content:"";position:absolute;left:0;top:.95em;width:8px;height:1px;background:#4E97A1}
+
+/* ---------- flow ---------- */
+.flow__track{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;margin-top:20px}
+.flow__line{position:absolute;left:0;right:0;top:15px;height:1px;background:var(--rule)}
+.flow__line i{position:absolute;inset:0;background:var(--asagi);transform:scaleX(0);transform-origin:left;transition:transform 2.4s cubic-bezier(.6,0,.2,1)}
+.flow__track.is-in .flow__line i{transform:scaleX(1)}
+.step{position:relative;padding-top:52px;opacity:.25;transition:opacity .8s ease}
+.flow__track.is-in .step{opacity:1}
+.flow__track.is-in .step:nth-child(3){transition-delay:.4s}
+.flow__track.is-in .step:nth-child(4){transition-delay:.9s}
+.flow__track.is-in .step:nth-child(5){transition-delay:1.4s}
+.flow__track.is-in .step:nth-child(6){transition-delay:1.9s}
+.step::before{content:"";position:absolute;left:0;top:8px;width:1px;height:16px;background:var(--hinoki)}
+.step__no{font-family:var(--latin);font-style:italic;font-size:22px;color:var(--hinoki);line-height:1;display:block;margin-bottom:12px}
+.step h3{font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:.12em;margin:0 0 10px;line-height:1.6}
+.step p{margin:0;font-size:13.5px;color:#BCC4C9;line-height:1.85}
+
+/* ---------- band photo ---------- */
+.band{position:relative;height:clamp(280px,48vw,560px);overflow:hidden}
+.band .ph{position:absolute;inset:0;aspect-ratio:auto}
+.band .ph::after{display:none}
+.band .ph img{filter:saturate(.55) brightness(.62)}
+.band__txt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 var(--pad)}
+.band__txt p{font-family:var(--serif);font-size:clamp(20px,2.6vw,32px);letter-spacing:.2em;line-height:1.9;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+
+/* ---------- message ---------- */
+.message{background:var(--ink-2)}
+.msg{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(40px,6vw,96px);align-items:start}
+.msg__v{writing-mode:vertical-rl;font-family:var(--serif);font-size:16.5px;line-height:2.3;letter-spacing:.14em;max-height:30em;margin:0;justify-self:end}
+.msg__v p{margin:0 0 0 1.2em}
+.msg__v p.first{font-size:clamp(22px,2.4vw,28px);font-weight:600;line-height:1.9;margin-left:2em}
+.msg__side{align-self:end}
+.sign{margin-top:40px;font-family:var(--serif);letter-spacing:.14em}
+.sign small{display:block;font-size:12.5px;color:var(--mute);font-family:var(--sans)}
+.sign span{font-size:22px}
+
+/* ---------- profile ---------- */
+.profile__grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,6vw,90px)}
+.ptbl{width:100%;border-collapse:collapse;font-size:15px}
+.ptbl th,.ptbl td{text-align:left;vertical-align:top;padding:22px 0;border-bottom:1px solid var(--rule)}
+.ptbl tr:first-child th,.ptbl tr:first-child td{border-top:1px solid var(--rule)}
+.ptbl th{width:9em;font-weight:500;color:var(--mute);letter-spacing:.14em;font-size:13.5px;padding-right:20px}
+
+/* ---------- footer ---------- */
+.ft{border-top:1px solid var(--rule);padding:56px 0 calc(40px + env(safe-area-inset-bottom,0px))}
+.ft__in{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.ft small{color:var(--mute);font-size:12px;letter-spacing:.1em}
+.ft nav ul{display:flex;flex-wrap:wrap;gap:8px 26px;list-style:none;margin:0 0 18px;padding:0;font-size:13px}
+.ft nav a{text-decoration:none;color:#BCC4C9}
+.ft nav a:hover{color:var(--paper)}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .flow__track{grid-template-columns:1fr;gap:0;padding-left:28px}
+  .flow__line{left:0;right:auto;top:0;bottom:0;width:1px;height:auto}
+  .flow__line i{transform:scaleY(0);transform-origin:top}
+  .flow__track.is-in .flow__line i{transform:scaleY(1)}
+  .step{padding:0 0 36px}
+  .step::before{left:-28px;top:12px;width:16px;height:1px}
+}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  .gnav{position:fixed;inset:0;background:rgba(15,26,36,.97);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;z-index:-1}
+  .gnav.is-open{opacity:1;visibility:visible}
+  .gnav ul{flex-direction:column;gap:30px;text-align:center}
+  .gnav a{font-family:var(--serif);font-size:20px}
+  .rail{right:10px;height:40vh}
+  .hero__in{grid-template-columns:1fr;gap:28px}
+  .hero__title{writing-mode:horizontal-tb;justify-self:start;padding-top:0;font-size:clamp(28px,7.4vw,40px);letter-spacing:.12em;line-height:1.6}
+  .hero__title span:last-child{margin-top:.2em;padding-left:1.2em}
+  .concept__grid,.profile__grid{grid-template-columns:1fr}
+  .concept__fig{max-width:320px}
+  .svc,.svc:nth-child(even){grid-template-columns:1fr}
+  .svc:nth-child(even) .ph{order:0}
+  .msg{grid-template-columns:1fr}
+  .msg__v{writing-mode:horizontal-tb;max-height:none;justify-self:start;font-size:15.5px;line-height:2.1}
+  .msg__v p{margin:0 0 1.2em}
+  .msg__v p.first{margin:0 0 1em}
+  .pair{grid-template-columns:1fr}
+  .ptbl th{width:6.5em}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;transition-delay:0s!important;animation:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="hd" id="hd">
+  <div class="hd__in">
+    <a class="brand" href="#top" aria-label="一般社団法人にほん支援推進機構 トップへ">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="8" y="3" width="2" height="24" fill="#C8AE7D"/><rect x="8" y="14" width="19" height="2" fill="#6FB3BD"/></svg>
+      <span class="brand__name"><small>一般社団法人</small>にほん支援推進機構</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-controls="gnav" aria-expanded="false" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    <nav class="gnav" id="gnav" aria-label="メインナビゲーション">
+      <ul>
+        <li><a href="#concept">考え方</a></li>
+        <li><a href="#services">事業内容</a></li>
+        <li><a href="#flow">支援の流れ</a></li>
+        <li><a href="#message">代表メッセージ</a></li>
+        <li><a href="#profile">法人概要</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="rail" aria-hidden="true">
+  <div class="rail__pillar"></div>
+  <div class="rail__push" id="railPush"></div>
+</div>
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top" aria-label="メインビジュアル">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero__grad"></div>
+    <div class="hero__in">
+      <div class="hero__lede hero__load">
+        <p class="en">Support, and push forward.</p>
+        <p>経営の悩みに寄り添い、事業を次の一歩へ押し出す。<br>一般社団法人にほん支援推進機構は、中小企業と個人事業主のための経営コンサルティング機関です。</p>
+      </div>
+      <h1 class="hero__title hero__load"><span>支える一本、</span><span>押し出す一本。</span></h1>
+    </div>
+  </section>
+
+  <!-- ===== CONCEPT ===== -->
+  <section class="sec concept" id="concept" aria-labelledby="concept-h">
+    <div class="wrap concept__grid">
+      <div class="concept__fig" id="conceptFig">
+        <svg viewBox="0 0 400 400" role="img" aria-label="縦の線「支援」と横の線「推進」が交わる図">
+          <line class="ln ln-v" x1="140" y1="20" x2="140" y2="380"/>
+          <line class="ln ln-h" x1="140" y1="210" x2="400" y2="210"/>
+          <circle class="dot" cx="140" cy="210" r="5"/>
+          <text class="lbl" x="112" y="70" writing-mode="tb" style="writing-mode:vertical-rl">支援</text>
+          <text class="lbl" x="300" y="248">推進</text>
+        </svg>
+      </div>
+      <div class="concept__body reveal">
+        <h2 class="sec-h" id="concept-h">二本の手で、事業を前へ。</h2>
+        <p class="sec-sub">Our way of working</p>
+        <p class="concept__lead">一本は、揺らがないように支える手。<br>もう一本は、前へ進むよう背中を押す手。</p>
+        <p>私たちの名前にある「支援」と「推進」は、どちらか一方だけでは足りません。支えるだけでは事業は止まったまま。押すだけでは、足もとが崩れてしまう。</p>
+        <p>現状を丁寧に理解して土台を整えること。そして、決めたことを実行に移し、成果が出るまで伴走すること。この二つを一組にして、経営者のとなりに立ちます。</p>
+        <div class="pair">
+          <div><h3>支援</h3><p>現状の把握、資金や計画の整理、判断の相談相手として、経営の足もとを支えます。</p></div>
+          <div><h3>推進</h3><p>計画を行動に変え、販路・発信・組織づくりまで、事業が進む力をつくります。</p></div>
+        </div>
+        <p class="for-whom"><strong>ご一緒している方々</strong>　中小企業の経営者、個人事業主、これから事業を始める方</p>
+        <!-- [要確認-03] 主な支援対象（業種・規模・地域の限定有無） -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="sec services" id="services" aria-labelledby="services-h">
+    <div class="wrap">
+      <div class="reveal">
+        <h2 class="sec-h" id="services-h">事業内容</h2>
+        <p class="sec-sub">What we do</p>
+        <p class="services__intro">経営のどこに手を添えるべきかは、事業ごとに違います。四つの領域を行き来しながら、いま必要な支援を組み立てます。</p>
+      </div>
+      <!-- [要確認-03] 以下4領域は業種「コンサル業」から想定した仮案です。実際の提供内容に合わせて修正してください -->
+      <div class="svc-list">
+        <article class="svc reveal">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=70" alt="机の上で事業計画の資料を検討している様子" loading="lazy" onerror="this.parentElement.classList.add('is-fallback');this.remove()"></div>
+          <div>
+            <h3>経営の伴走支援</h3>
+            <p>数字と現場の両方から現状を読み解き、事業計画を一緒に描きます。月ごとの対話を重ね、判断に迷ったときの相談相手になります。</p>
+            <ul><li>経営相談</li><li>事業計画の策定</li><li>収支・資金繰りの整理</li><li>創業準備</li></ul>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=70" alt="ノートパソコンでデータを分析している画面" loading="lazy" onerror="this.parentElement.classList.add('is-fallback');this.remove()"></div>
+          <div>
+            <h3>補助金・助成金の活用支援</h3>
+            <p>事業に合う公的制度の情報を整理し、活用に向けた事業計画づくりを支援します。制度ありきではなく、事業の方向に沿った使い方を考えます。</p>
+            <!-- [要確認-04] 申請書類の作成・提出代行を行う場合は、行政書士（補助金）・社会保険労務士（雇用関係助成金）との連携表記が必要です -->
+            <ul><li>制度情報の提供</li><li>計画書づくりの支援</li><li>採択後の実行サポート</li></ul>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=70" alt="ホワイトボードを前に販売戦略を話し合う様子" loading="lazy" onerror="this.parentElement.classList.add('is-fallback');this.remove()"></div>
+          <div>
+            <h3>販路と発信の支援</h3>
+            <p>誰に、何を、どう届けるか。商品やサービスの強みを言葉にし、新しい販路の開拓や情報発信の仕組みづくりまで伴走します。</p>
+            <ul><li>販路開拓</li><li>マーケティング戦略</li><li>Web・SNS発信の設計</li></ul>
+            <!-- [要確認-06] 広告・SNS運用に関わる場合、景品表示法（優良誤認・有利誤認）への配慮表記を検討 -->
+          </div>
+        </article>
+        <article class="svc reveal">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=70" alt="チームがテーブルを囲んで協働している様子" loading="lazy" onerror="this.parentElement.classList.add('is-fallback');this.remove()"></div>
+          <div>
+            <h3>人と組織の支援</h3>
+            <p>事業を動かすのは人です。役割の整理や育成の仕組みづくり、研修・勉強会を通じて、チームが自ら進める組織を育てます。</p>
+            <ul><li>組織体制の整理</li><li>人材育成・研修</li><li>セミナー・勉強会</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FLOW ===== -->
+  <section class="sec flow" id="flow" aria-labelledby="flow-h">
+    <div class="wrap">
+      <div class="reveal">
+        <h2 class="sec-h" id="flow-h">支援の流れ</h2>
+        <p class="sec-sub">How we move together</p>
+      </div>
+      <!-- [要確認-03] 実際の支援プロセス・期間・費用体系に合わせて調整してください -->
+      <ol class="flow__track" id="flowTrack" style="list-style:none;padding-left:0;margin-left:0">
+        <li class="flow__line" aria-hidden="true"><i></i></li>
+        <li class="step"><span class="step__no">01</span><h3>お話を伺う</h3><p>事業の成り立ちや、いま抱えている課題を率直にお聞きします。</p></li>
+        <li class="step"><span class="step__no">02</span><h3>現在地を測る</h3><p>数字・商品・人の状態を整理し、課題の優先順位をつけます。</p></li>
+        <li class="step"><span class="step__no">03</span><h3>道筋を描く</h3><p>目標と打ち手を計画に落とし込み、進め方を合意します。</p></li>
+        <li class="step"><span class="step__no">04</span><h3>共に動く</h3><p>定期的な対話で実行を支え、状況に合わせて計画を修正します。</p></li>
+        <li class="step"><span class="step__no">05</span><h3>振り返り、次へ</h3><p>成果と学びを確かめ、次の段階の目標を一緒に定めます。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== BAND ===== -->
+  <div class="band" role="presentation">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy" onerror="this.parentElement.classList.add('is-fallback');this.remove()"></div>
+    <div class="band__txt"><p class="reveal">足もとを支え、<span class="nw">一歩先へ押し出す。</span></p></div>
+  </div>
+
+  <!-- ===== MESSAGE ===== -->
+  <section class="sec message" id="message" aria-labelledby="message-h">
+    <div class="wrap msg">
+      <div class="msg__side reveal">
+        <h2 class="sec-h" id="message-h">代表メッセージ</h2>
+        <p class="sec-sub">Message</p>
+        <div class="sign">
+          <small>一般社団法人にほん支援推進機構<br>代表理事</small><!-- [要確認-01] 役職名 -->
+          <span>鈴木 侑也</span>
+        </div>
+      </div>
+      <!-- [要確認-07] 以下は下書きです。代表者ご本人の確認・修正後に公開してください -->
+      <div class="msg__v reveal">
+        <p class="first">ひとりで抱えない経営を、当たり前に。</p>
+        <p>事業を営む方の多くは、決断も責任も一人で背負っています。相談できる相手がいないまま、目の前の仕事に追われ、先のことを考える時間が持てない。そんな声を、これまで数多く耳にしてきました。</p>
+        <p>私たちが大切にしているのは、支えることと、前へ押し出すことを、切り離さないことです。足もとを整えるだけでも、背中を押すだけでもなく、経営者のとなりで、ともに考え、ともに動く存在でありたいと考えています。</p>
+        <p>一つひとつの事業が力強く進むことが、地域や社会の活力につながると信じて。私たちは、これからも手を添え続けます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROFILE ===== -->
+  <section class="sec profile" id="profile" aria-labelledby="profile-h">
+    <div class="wrap profile__grid">
+      <div class="reveal">
+        <h2 class="sec-h" id="profile-h">法人概要</h2>
+        <p class="sec-sub">Organization</p>
+      </div>
+      <div class="reveal">
+        <table class="ptbl">
+          <tbody>
+            <tr><th scope="row">法人名</th><td>一般社団法人にほん支援推進機構</td></tr>
+            <tr><th scope="row">代表者</th><td>代表理事　鈴木 侑也<!-- [要確認-01] 役職名 --></td></tr>
+            <tr><th scope="row">所在地</th><td>〒125-0041<br>東京都葛飾区東金町3丁目18番10号<!-- [要確認-09] 建物名・部屋番号の有無 --></td></tr>
+            <tr><th scope="row">事業内容</th><td>経営コンサルティング事業<!-- [要確認-03] 定款記載の事業目的との整合 --></td></tr>
+            <!-- [要確認-02] 確定後にコメントを外して掲載
+            <tr><th scope="row">設立</th><td></td></tr>
+            <tr><th scope="row">法人番号</th><td></td></tr>
+            <tr><th scope="row">理事</th><td></td></tr>
+            <tr><th scope="row">連携専門家</th><td></td></tr>
+            -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap ft__in">
+    <a class="brand" href="#top" aria-label="トップへ戻る">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="8" y="3" width="2" height="24" fill="#C8AE7D"/><rect x="8" y="14" width="19" height="2" fill="#6FB3BD"/></svg>
+      <span class="brand__name"><small>一般社団法人</small>にほん支援推進機構</span>
+    </a>
+    <div>
+      <nav aria-label="フッターナビゲーション">
+        <ul>
+          <li><a href="#concept">考え方</a></li>
+          <li><a href="#services">事業内容</a></li>
+          <li><a href="#flow">支援の流れ</a></li>
+          <li><a href="#message">代表メッセージ</a></li>
+          <li><a href="#profile">法人概要</a></li>
+        </ul>
+      </nav>
+      <small>&copy; 2026 一般社団法人にほん支援推進機構</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- page load ---- */
+  window.addEventListener("load", function(){ document.body.classList.add("is-loaded"); });
+  setTimeout(function(){ document.body.classList.add("is-loaded"); }, 1800);
+
+  /* ---- header state ---- */
+  var hd = document.getElementById("hd");
+  function onScrollHeader(){ hd.classList.toggle("is-scrolled", window.scrollY > 40); }
+
+  /* ---- mobile menu ---- */
+  var btn = document.getElementById("menuBtn"), nav = document.getElementById("gnav");
+  function setMenu(open){
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+    nav.classList.toggle("is-open", open);
+    document.body.style.overflow = open ? "hidden" : "";
+    if(open){ var f = nav.querySelector("a"); if(f) f.focus(); }
+  }
+  btn.addEventListener("click", function(){ setMenu(btn.getAttribute("aria-expanded") !== "true"); });
+  nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ if(nav.classList.contains("is-open")) setMenu(false); }); });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && nav.classList.contains("is-open")){ setMenu(false); btn.focus(); }
+  });
+
+  /* ---- progress rail：柱に沿って横の一本が伸びながら進む ---- */
+  var push = document.getElementById("railPush"), rail = push.parentElement;
+  ["concept","services","flow","message","profile"].forEach(function(id){
+    var t = document.createElement("span"); t.className = "rail__tick"; t.dataset.target = id; rail.appendChild(t);
+  });
+  function layoutTicks(){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    rail.querySelectorAll(".rail__tick").forEach(function(t){
+      var el = document.getElementById(t.dataset.target);
+      if(!el || max <= 0) return;
+      t.style.top = Math.min(100, (el.offsetTop / max) * 100) + "%";
+    });
+  }
+  function onScrollRail(){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    push.style.top = (p * 100) + "%";
+    push.style.width = (10 + p * 30) + "px";
+  }
+
+  var ticking = false;
+  window.addEventListener("scroll", function(){
+    if(!ticking){ requestAnimationFrame(function(){ onScrollHeader(); onScrollRail(); ticking = false; }); ticking = true; }
+  }, {passive:true});
+  window.addEventListener("resize", layoutTicks);
+  window.addEventListener("load", layoutTicks);
+  onScrollHeader(); onScrollRail(); layoutTicks();
+
+  /* ---- reveal / draw ---- */
+  var targets = document.querySelectorAll(".reveal, #conceptFig, #flowTrack");
+  if("IntersectionObserver" in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("is-in"); io.unobserve(en.target); } });
+    }, {threshold:.18, rootMargin:"0px 0px -6% 0px"});
+    targets.forEach(function(t){ io.observe(t); });
+  } else {
+    targets.forEach(function(t){ t.classList.add("is-in"); });
+  }
+
+  /* ---- hero canvas：流れる線が「柱」を越えると持ち上がり、加速する ---- */
+  var cv = document.getElementById("heroCanvas"), ctx = cv.getContext("2d");
+  var W, H, dpr, pillarX, streams = [], raf = null, visible = true;
+  var C_BG = "15,26,36", C_SLOW = [142,155,165], C_FAST = [111,179,189], C_PILLAR = "200,174,125";
+
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    pillarX = W < 860 ? W * 0.34 : W * 0.46;
+    var n = Math.round(Math.min(90, Math.max(40, H / 11)));
+    streams = [];
+    for(var i=0;i<n;i++){
+      streams.push(makeStream((i + Math.random()*.6) / n * H, Math.random() * W));
+    }
+    ctx.fillStyle = "rgb(" + C_BG + ")"; ctx.fillRect(0,0,W,H);
+  }
+  function makeStream(y, x){
+    return { baseY:y, x:x, px:x, py:y, v:.5 + Math.random()*.4, phase:Math.random()*6.28, w:.6 + Math.random()*.9 };
+  }
+  function yAt(s, x, t){
+    // 柱の手前ではゆるやかに沈み、柱を越えると持ち上がる
+    var d = x - pillarX, lift;
+    if(d < 0){ lift = Math.min(1, -d / (W*0.4)) * 0 + (1 - Math.min(1, -d/(W*0.45))) * 14; }
+    else { lift = 14 - Math.min(1, d / (W*0.12)) * 34; }
+    return s.baseY + lift + Math.sin(t*0.0009 + s.phase + x*0.004) * 3;
+  }
+  function frame(t){
+    ctx.fillStyle = "rgba(" + C_BG + ",.10)";
+    ctx.fillRect(0,0,W,H);
+    // 柱
+    ctx.fillStyle = "rgba(" + C_PILLAR + ",.85)";
+    ctx.fillRect(pillarX, H*0.12, 1.2, H*0.76);
+
+    for(var i=0;i<streams.length;i++){
+      var s = streams[i];
+      var past = s.x > pillarX;
+      var target = past ? s.v * 4.2 : s.v;
+      s.cur = s.cur == null ? target : s.cur + (target - s.cur) * 0.06;
+      s.px = s.x; s.py = s.y == null ? s.baseY : s.y;
+      s.x += s.cur;
+      s.y = yAt(s, s.x, t);
+      var k = Math.max(0, Math.min(1, (s.x - pillarX) / (W*0.1)));
+      var r = Math.round(C_SLOW[0] + (C_FAST[0]-C_SLOW[0])*k),
+          g = Math.round(C_SLOW[1] + (C_FAST[1]-C_SLOW[1])*k),
+          b = Math.round(C_SLOW[2] + (C_FAST[2]-C_SLOW[2])*k);
+      ctx.strokeStyle = "rgba(" + r + "," + g + "," + b + "," + (0.28 + k*0.55) + ")";
+      ctx.lineWidth = s.w;
+      ctx.beginPath(); ctx.moveTo(s.px, s.py); ctx.lineTo(s.x, s.y); ctx.stroke();
+      if(s.x > W + 20){ s.x = -20; s.y = null; s.cur = s.v; }
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  function drawStatic(){
+    ctx.fillStyle = "rgb(" + C_BG + ")"; ctx.fillRect(0,0,W,H);
+    ctx.fillStyle = "rgba(" + C_PILLAR + ",.85)"; ctx.fillRect(pillarX, H*0.12, 1.2, H*0.76);
+    streams.forEach(function(s){
+      ctx.lineWidth = s.w;
+      for(var x=0;x<W;x+=6){
+        var k = Math.max(0, Math.min(1, (x - pillarX) / (W*0.1)));
+        ctx.strokeStyle = k > 0 ? "rgba(111,179,189," + (0.25 + k*0.5) + ")" : "rgba(142,155,165,.22)";
+        ctx.beginPath(); ctx.moveTo(x, yAt(s,x,0)); ctx.lineTo(x+6, yAt(s,x+6,0)); ctx.stroke();
+      }
+    });
+  }
+  function start(){ if(!raf && !reduce && visible) raf = requestAnimationFrame(frame); }
+  function stop(){ if(raf){ cancelAnimationFrame(raf); raf = null; } }
+
+  resize();
+  if(reduce){ drawStatic(); } else { start(); }
+  var rt;
+  window.addEventListener("resize", function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){ stop(); resize(); if(reduce) drawStatic(); else start(); }, 150);
+  });
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(en){ visible = en[0].isIntersecting; if(visible) start(); else stop(); }).observe(cv);
+  }
+  document.addEventListener("visibilitychange", function(){ if(document.hidden) stop(); else start(); });
+})();
+</script>
+</body>
+</html>
